@@ -59,6 +59,6 @@ app.use("/",protectedrts);
 
 //server stuff
 var server = http.createServer(app);
-var port = process.env.PORT||3000;
+var port = process.env.PORT;
 app.set('port', port);
 server.listen(port);
