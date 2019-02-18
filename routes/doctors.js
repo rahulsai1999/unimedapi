@@ -6,7 +6,6 @@ var shortid=require("shortid");
 router.post("/create",function(req,res){
 
     var Doc=new Doctor({
-        _id:shortid.generate().slice(0,7),
         name:req.body.name
     });
 
