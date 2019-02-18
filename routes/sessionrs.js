@@ -12,7 +12,7 @@ router.post("/create",isLoggedIn,function(req,res,next){
   var sess=new Session({
     isactive:true,
     date:new Date(),
-    patid:x,
+    patid:x.id,
     docid:y
   });
   
@@ -20,11 +20,22 @@ router.post("/create",isLoggedIn,function(req,res,next){
     if(err)
     res.json("err");
     else{
-      var patientf=Patient.findById(obj.patid);
-      var doctorf=Doctor.findById(obj.docid);
       var objid=obj.id;
-      var finalobj={pname:patientf.name,dname:doctorf.name,sessid:objid};
-      res.json(finalobj);
+      Patient.findById(obj.patid,function(err,fp){
+        if(err)
+        console.log(err)
+        else{
+          Doctor.findById(obj.docid,function(err,fd){
+            if(err)
+            console.log(err)
+            else{
+              var m1="Hi "+fp.name+", Your Session with "+fd.name+"is active now.";
+              var m2="Session iD: "+objid;
+              res.json({message1:m1,message2:m2});
+            }
+          });
+        }
+      });
     }
   });
 
