@@ -29,7 +29,7 @@ router.post("/create",isLoggedIn,function(req,res,next){
             if(err)
             console.log(err)
             else{
-              var m1="Hi "+fp.name+", Your Session with "+fd.name+"is active now.";
+              var m1="Hi "+fp.name+", Your Session with "+fd.name+" is active now.";
               var m2="Session iD: "+objid;
               res.json({message1:m1,message2:m2});
             }
