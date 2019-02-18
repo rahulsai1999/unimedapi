@@ -12,7 +12,7 @@ router.post("/create",isLoggedIn,function(req,res,next){
   var sess=new Session({
     isactive:true,
     date:new Date(),
-    patid:x.id,
+    patid:x.body.id,
     docid:y
   });
   
