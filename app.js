@@ -15,6 +15,8 @@ var ExtractJwt = require('passport-jwt').ExtractJwt;
 //var imgapi=require("./routes/imgapi");
 var auth=require("./routes/auth");
 var protectedrts=require("./routes/protectedrts");
+var docroutes=require("./routes/doctors");
+var sessroutes=require("./routes/sessionrs");
 // var food=require("./routes/food");
 // var recordops=require("./routes/recordops");
 
@@ -54,6 +56,8 @@ passport.use('jwt', new JwtStrategy(options, function(jwt_payload, done) {
 // app.use("/",imgapi);
 app.use("/",auth);
 app.use("/",protectedrts);
+app.use("/session",sessroutes);
+app.use("/doctors",docroutes);
 // app.use("/",food);
 // app.use("/recordops",recordops);
 
