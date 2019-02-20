@@ -41,4 +41,22 @@ router.post("/create",isLoggedIn,function(req,res,next){
 
 });
 
+router.get("/terminate/:id",isLoggedIn,function(req,res){
+  var idfor=req.params.id;
+  Session.findById(idfor,function(err,foundses){
+    if(err)
+    console.log(err);
+    else
+    {
+      foundses.isactive=false;
+      Session.findByIdAndUpdate(idfor,foundses,function(err,doneok){
+        if(err)
+        console.log(err);
+        else
+        res.json("Session Terminated successfully");
+      });
+    }
+  });
+});
+
 module.exports=router;

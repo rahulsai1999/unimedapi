@@ -63,6 +63,6 @@ app.use("/doctors",docroutes);
 
 //server stuff
 var server = http.createServer(app);
-var port = process.env.PORT;
+var port = process.env.PORT||3000;
 app.set('port', port);
 server.listen(port);
