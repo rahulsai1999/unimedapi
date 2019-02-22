@@ -32,4 +32,4 @@ router.get("/search/:name",function(req,res){
 });
 
 
-module.exports=Router;
+module.exports=router;
