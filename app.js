@@ -17,6 +17,7 @@ var auth=require("./routes/auth");
 var protectedrts=require("./routes/protectedrts");
 var docroutes=require("./routes/doctors");
 var sessroutes=require("./routes/sessionrs");
+var medroutes=require("./routes/medicine");
 // var food=require("./routes/food");
 // var recordops=require("./routes/recordops");
 
@@ -58,6 +59,7 @@ app.use("/",auth);
 app.use("/",protectedrts);
 app.use("/session",sessroutes);
 app.use("/doctors",docroutes);
+app.use("/medicine",medroutes);
 // app.use("/",food);
 // app.use("/recordops",recordops);
 
