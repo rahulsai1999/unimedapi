@@ -9,6 +9,7 @@
     "bootstrap": "^4.1.1",
     "cloudinary": "^1.13.2",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
     "debug": "^4.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.3",

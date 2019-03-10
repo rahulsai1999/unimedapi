@@ -10,6 +10,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
+var cors=require("cors");
 
 //require routes
 //var imgapi=require("./routes/imgapi");
@@ -52,7 +53,7 @@ passport.use('jwt', new JwtStrategy(options, function(jwt_payload, done) {
   })
 }))
 
-
+app.use(cors())
 //routes
 // app.use("/",imgapi);
 app.use("/",auth);
