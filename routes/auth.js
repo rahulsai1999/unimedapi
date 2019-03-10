@@ -24,14 +24,15 @@ router.post('/login', function (req, res, next) {
 router.post('/register', function (req, res) {
     Patient.register(new Patient(
       { _id:shortid.generate().slice(0,7),
-        name:req.body.name,
-        DOB:req.body.dob,
+        // name:req.body.name,
+        // DOB:req.body.dob,
         username:req.body.username,
-        email:req.body.email,
-        gender:req.body.gender,
-        height:req.body.height,
-        weight:req.body.weight,
-        bldgrp:req.body.bloodgrp}), req.body.password, function (err, user) {
+        // email:req.body.email,
+        // gender:req.body.gender,
+        // height:req.body.height,
+        // weight:req.body.weight,
+        // bldgrp:req.body.bloodgrp
+      }), req.body.password, function (err, user) {
       if (err) {
         return res.status(400).send({ error: 'Email address in use.' })
       }
