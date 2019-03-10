@@ -53,7 +53,7 @@ passport.use('jwt', new JwtStrategy(options, function(jwt_payload, done) {
   })
 }))
 
-app.use(cors())
+// app.use(cors())
 //routes
 // app.use("/",imgapi);
 app.use("/",auth);
